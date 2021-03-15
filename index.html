@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Alu">
-	    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
     <link href="imgs/icon6.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon" href="imgs/icon6.png">
     <link rel="icon" type="image/vnd.microsoft.icon" href="imgs/icon6.png">
@@ -50,13 +50,13 @@
     <meta property="og:description" content="Première qualité à prix très bas !" />
     <meta property="og:image"       content="" />
 
-  
+
   <style>
 
 
 	
 .video-container {
-    overflow: hiddesn;
+    overflow: hidden;
     position: relative;
     max-width: 800px;
   margin: 0 auto;
@@ -112,11 +112,20 @@ main {
   padding: 5px;
 }
   </style>
-  
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
 
   <body>
-    <script>
+   
+    <script type="text/javascript">
+      $(function (){
+        $(".SecondDivID").load("HtmlPage2.html");
+        $(".contactfr").load("contactfr.html");
+      });    
+      </script>  
+         
+   
+   <script>
       var shopcartSettings = {
         "shopcart_top_offset": 120,
         "side_offset": 20,
@@ -130,7 +139,8 @@ main {
         "checkout_button": "Check Out with"
       };
     </script>
-<script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+
 
 
 
@@ -182,7 +192,8 @@ main {
 
             <div class="mbr-table-cell col-md-4">
               <div class="text-xs-center"><a class="btn btn-success" href="" target="_blank" data-language="donatebtn">Contactez-nous !</a></div>
-              <div w3-include-html="contactfr.html"></div> 
+             
+              <div class="contactfr"></div>
              
               
             </div>
@@ -192,6 +203,9 @@ main {
         </div>
       </div>
     </section>
+
+    <div class="SecondDivID"></div>
+
 
     <div id="row">
 
@@ -618,11 +632,14 @@ main {
 
 
           
+          <!-- Display A Random Ad -->
           
       </div>
     </footer>
 
-
+    <script>
+      w3IncludeHTML();
+    </script>
     <script src="assets/web/assets/jquery/jquery.min.js"></script>
     <script src="assets/tether/tether.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -644,7 +661,7 @@ main {
     <script src="js/jquery.smartbanner.js"></script>
     <input name="animation" type="hidden">
 
-    
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58bb8f9cfb49b5de"></script> 
     
     <script>
 //      $.smartbanner({
@@ -665,9 +682,7 @@ main {
       ga('send', 'pageview');
     </script>
 
-<script>
-  w3IncludeHTML();
-</script>
+
 
 
   </body>
