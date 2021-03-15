@@ -17,6 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Alu">
+
     <link href="imgs/icon6.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon" href="imgs/icon6.png">
     <link rel="icon" type="image/vnd.microsoft.icon" href="imgs/icon6.png">
@@ -42,18 +43,40 @@
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="libraries/font-awesome/font-awesome.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="contactfr.html" rel="import" />
-    <meta property="og:url"         content="http://altestalu.com" />
+      <meta property="og:url"         content="http://altestalu.com" />
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="ALTEST Aluminium" />
     <meta property="og:description" content="Première qualité à prix très bas !" />
     <meta property="og:image"       content="" />
 
-    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
   <style>
 
 
+	
+.video-container {
+    overflow: hidden;
+    position: relative;
+    max-width: 800px;
+  margin: 0 auto;
+  align:center;
+}
 
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container iframe {
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    height: 100%;
+}
 
 
 .image_tz{
@@ -88,11 +111,22 @@ main {
   padding: 5px;
 }
   </style>
-  
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
 
   <body>
-    <script>
+   
+    <script type="text/javascript">
+      $(function (){
+        $(".SecondDivID").load("HtmlPage2.html");
+        $(".contactfr").load("contactfr.html");
+        $(".menufr").load("menufr.html");
+        $(".footer").load("footer.html");
+      });    
+      </script>  
+         
+   
+   <script>
       var shopcartSettings = {
         "shopcart_top_offset": 120,
         "side_offset": 20,
@@ -110,7 +144,8 @@ main {
 
 
 
-    <div w3-include-html="menu.html"></div>
+<div class="menufr"></div>
+
 
 
 
@@ -158,7 +193,8 @@ main {
 
             <div class="mbr-table-cell col-md-4">
               <div class="text-xs-center"><a class="btn btn-success" href="" target="_blank" data-language="donatebtn">Contactez-nous !</a></div>
-              <div w3-include-html="contactfr.html"></div> 
+             
+              <div class="contactfr"></div>
              
               
             </div>
@@ -168,6 +204,9 @@ main {
         </div>
       </div>
     </section>
+
+
+
 
     <div id="row">
 
@@ -237,16 +276,18 @@ main {
 
 
 
-    <main></br>
+    <!--<main></br>
       <h3></br>Altest Video Presentation</h3>
        <p> A short video about the manufacturing process of aluminium profiles.</p>
       <video src="vid/Entrance door.mp4" poster="vid\placeholder2.png" controls></video>
     </br>   </br>   
 
-      <!--<video src="vid/Altest1.mp4" poster="vid\placeholder1.png"controls></video>-->
+      <!--<video src="vid/Altest1.mp4" poster="vid\placeholder1.png"controls></video>
     
-    </main>
-
+    </main>-->
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/f-oVwKz8lgE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
 
 
@@ -586,20 +627,18 @@ main {
 
 
      
-
-          <div w3-include-html="footer.html"></div> 
+        <div class="footer"></div>
+         
 
 
 
           
           <!-- Display A Random Ad -->
-          <div style="padding-top: 30px;">
-            <script src="//michaelsboost.github.io/DynamicJSAds/ads.js" id="insertAds"></script>
-          </div>
+          
       </div>
     </footer>
 
-
+ 
     <script src="assets/web/assets/jquery/jquery.min.js"></script>
     <script src="assets/tether/tether.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -620,8 +659,7 @@ main {
     <script src="js/index.js"></script>
     <script src="js/jquery.smartbanner.js"></script>
     <input name="animation" type="hidden">
-
-    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58bb8f9cfb49b5de"></script> 
+ 
     
     <script>
 //      $.smartbanner({
@@ -642,9 +680,7 @@ main {
       ga('send', 'pageview');
     </script>
 
-<script>
-  w3IncludeHTML();
-</script>
+
 
 
   </body>
