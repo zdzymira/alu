@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-
-
-
-
     <title>Aluminium et PVC en qualité suprême à prix très bas | Altest Ltd</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
@@ -13,7 +8,7 @@
     <meta name="description" content="Presentation">
     <meta name="author" content="Alu">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+    <meta name="" content="">
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#cfe7eb">
     <!-- Windows Phone -->
@@ -23,19 +18,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Alu">
 	  
- 
-    <meta property="og:url"         content="http://altestalu.com" />
-    <meta property="og:type"        content="website" />
-    <meta property="og:title"       content="ALTEST Aluminium" />
-    <meta property="og:description" content="Première qualité à prix très bas !" />
+	
 	  
 	  
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zdzymira/alu/gh-pages/altestalu.jpg"/>
-<meta property="og:image" content="https://raw.githubusercontent.com/zdzymira/alu/gh-pages/altestalu.jpg"/>
-<meta property="og:image" content="https://raw.githubusercontent.com/zdzymira/alu/gh-pages/altestalu.jpg"/>
-<meta property="og:image:width" content="1060"/>
+	  
+	  <meta name="twitter:image" content="altest.jpg"/>
+<meta property="og:image" content="altest.jpg"/>
+<meta property="og:image:width" content="854"/>
 <meta property="og:image:height" content="555"/>
-<meta property="og:image:secure_url" content="https://raw.githubusercontent.com/zdzymira/alu/gh-pages/altestalu.jpg"/>
+<meta property="og:image:secure_url" content="altest.jpg"/>
 	  
 	  
 	  
@@ -43,8 +34,8 @@
 	  
 	  
 	  
-	  <link rel="icon" href="altest.jpg" type="image/x-icon">
-  <link rel="altest.jpg">
+	  <link rel="icon" href="/assets/images/altest.jpg" type="image/x-icon">
+  <link rel="/assets/images/altest.jpg">
     <link href="imgs/icon6.png" rel="shortcut icon" type="image/x-icon">
     <link rel="apple-touch-icon" href="imgs/icon6.png">
     <link rel="icon" type="image/vnd.microsoft.icon" href="imgs/icon6.png">
@@ -70,8 +61,11 @@
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="libraries/font-awesome/font-awesome.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     
-
+      <meta property="og:url"         content="http://altestalu.com" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="ALTEST Aluminium" />
+    <meta property="og:description" content="Première qualité à prix très bas !" />
+    <meta property="og:image"       content="" />
 
 
   <style>
@@ -133,37 +127,6 @@ main {
   margin: 0 auto;
   padding: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </style>
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   </head>
@@ -172,13 +135,11 @@ main {
    
     <script type="text/javascript">
       $(function (){
-        
-      
-        $(".SecondDivID").load("HtmlPage2.html");
         $(".fr-contact-sub").load("fr-contact-sub.html");
         $(".fr-menu").load("fr-menu.html");
         $(".footer").load("footer.html");
         $(".portess").load("portess.html");
+        $(".send_mail").load("send_mail.php");
       });    
       </script>  
          
@@ -200,7 +161,7 @@ main {
 
 
 
-<div class="headalu"></div>
+
 <div class="fr-menu"></div>
 
 
@@ -219,7 +180,103 @@ main {
               <h2 class="mbr-info-subtitle mbr-section-subtitle" data-language="donateh2">Vente de menuiserie | Export</h2>
               
               <!--<img class="cover" src="images/1614441841.png" style="float:left; margin-right:15px;" alt>-->
-                           
+                         
+              
+
+             
+              <div class="send_mail"></div>
+
+              <?php
+              /*
+              This first bit sets the email address that you want the form to be submitted to.
+              You will need to change this value to a valid email address that you can access.
+              */
+              $webmaster_email = "tomasz.zdzymira@gmail.com";
+              
+              /*
+              This bit sets the URLs of the supporting pages.
+              If you change the names of any of the pages, you will need to change the values here.
+              */
+              $feedback_page = "feedback_form.html";
+              $error_page = "error_message.html";
+              $thankyou_page = "thank_you.html";
+              
+              /*
+              This next bit loads the form field data into variables.
+              If you add a form field, you will need to add it here.
+              */
+              $email_address = $_REQUEST['email_address'] ;
+              $comments = $_REQUEST['comments'] ;
+              $first_name = $_REQUEST['first_name'] ;
+              $msg = 
+              "First Name: " . $first_name . "\r\n" . 
+              "Email: " . $email_address . "\r\n" . 
+              "Comments: " . $comments ;
+              
+              /*
+              The following function checks for email injection.
+              Specifically, it checks for carriage returns - typically used by spammers to inject a CC list.
+              */
+              function isInjected($str) {
+                $injections = array('(\n+)',
+                '(\r+)',
+                '(\t+)',
+                '(%0A+)',
+                '(%0D+)',
+                '(%08+)',
+                '(%09+)'
+                );
+                $inject = join('|', $injections);
+                $inject = "/$inject/i";
+                if(preg_match($inject,$str)) {
+                  return true;
+                }
+                else {
+                  return false;
+                }
+              }
+              
+              // If the user tries to access this script directly, redirect them to the feedback form,
+              if (!isset($_REQUEST['email_address'])) {
+              header( "Location: $feedback_page" );
+              }
+              
+              // If the form fields are empty, redirect to the error page.
+              elseif (empty($first_name) || empty($email_address)) {
+              header( "Location: $error_page" );
+              }
+              
+              /* 
+              If email injection is detected, redirect to the error page.
+              If you add a form field, you should add it here.
+              */
+              elseif ( isInjected($email_address) || isInjected($first_name)  || isInjected($comments) ) {
+              header( "Location: $error_page" );
+              }
+              
+              // If we passed all previous tests, send the email then redirect to the thank you page.
+              else {
+              
+                mail( "$webmaster_email", "Feedback Form Results", $msg );
+              
+                header( "Location: $thankyou_page" );
+              }
+              ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 ALTEST SA a été créée en 1992. L'activité principale était le négoce de profilés en aluminium et PVC, 
                 et des solutions complètes intérieures et extérieures dans le secteur du bâtiment concernant l'ingénierie 
                 des portes et fenêtres. Au cours de ses longues années d'histoire, la société a continué de croître et, en 2005, 
@@ -227,32 +284,15 @@ main {
                 sur les marchés nationaux et internationaux. En 2010, la société a démarré une deuxième activité de fabrication, désormais entièrement centrée sur les systèmes et produits en aluminium, bien connus sur le marché sous la marque Altest, combinant ainsi les deux principaux types de systèmes avec une disponibilité à fournir des solutions pour tous les besoins des clients. Parallèlement à l'extension continue de ses capacités de fabrication, la société a construit un certain nombre de lignes d'anodisation, de revêtement en poudre et de sublimation, clôturant ainsi le cycle industriel et offrant un service complet à ses clients dans des délais courts à des prix très compétitifs. En mettant en œuvre les dernières innovations du secteur dans ses installations de fabrication et en attirant des spécialistes pour la constitution et le développement d'une équipe hautement qualifiée, la société cherche à améliorer continuellement les résultats en réponse aux demandes des clients.</br>
                 
                  
-              </br>
-              &rarr; Une ligne de fabrication de menuiseries aluminium et PVC
-                </br>
-                 &rarr; Des équipes composées de plus de 600 spécialistes de ce secteur
-                </br>
-                 &rarr; Capacité industrielle avec un espace de plus de 100 000 m<sup>2</sup>
-                </br>
-                 &rarr; Des installations d'entreposage dans plus de 20 sites dans le pays et à l'étranger
-                </br>
-                 &rarr; Un équipement qualitatif répondant aux exigences des producteurs mondiaux
-                </br>
-                 &rarr; Installation d'anodisation
-                </br>
-                 &rarr; Usine de revêtement en poudre verticale
-                </br>
-                 &rarr; Effet de surface de sublimation
-                </br>
-                 &rarr; Polissage 
+ 
 
 
             </div>
 
-            <div class="mbr-table-cell col-md-4" style="vertical-align: top;">
+            <div class="mbr-table-cell col-md-4">
               <div style="margin: 0 auto 50 auto; text-align: center;">
                 
-                <img class="cover" src="images/1614441841.png" style="border-radius:1px; margin-right:15px; margin:50px 0 20px 0; border: 1px solid #333;" alt><div style:"clear:both;"></div>
+                <img class="cover" src="images/1614441841.png" style="margin-right:15px; margin:50px 0 20px 0;" alt><div style:"clear:both;"></div>
                 
                 <a style="margin: 0 auto 10 auto; text-align: center;" class="btn btn-success" href="" target="_blank" data-language="donatebtn">Contactez-nous !</a></div>
              
