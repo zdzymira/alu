@@ -76,7 +76,13 @@
 
   <style>
 
-
+.img-container {
+    overflow: hidden;
+    position: relative;
+    max-width: 800px;
+    width: auto;
+  margin: 0 5px;
+}
 	
 .video-container {
     overflow: hidden;
@@ -118,7 +124,10 @@
 
 }
 
-
+.scover{  
+  max-width: 100%!important;
+  height: auto !important;
+  border-radius: 3px;}
 
 video {
   width: 100% !important;
@@ -170,25 +179,14 @@ main {
 
   <body>
    
-    <script type="text/javascript">
+<script type="text/javascript">
       $(function (){      
         $(".elements").load("elements.html");
-      }
-      );    
+      });    
 </script>  
 
 <div class="elements"></div>
-
-         
-   
-
-
-
-<div class="headalu"></div>
 <div class="fr-menu"></div>
-
-
-
 
 
     <section class="mbr-info mbr-section mbr-section-md-padding" id="msg-box2-4" style="background-color: #fefefe; padding-top: 90px; padding-bottom: 90px;">
@@ -198,7 +196,7 @@ main {
             
 
 
-            <div class="mbr-table-cell mbr-right-padding-md-up col-md-8 text-xs-center text-md-left">
+            <div class="mbr-table-cell mbr-right-padding-md-up col-md-8 text-xs-center text-md-left" style="vertical-align: top;">
               <!--<h3 class="mbr-info-title mbr-section-title display-2" data-language="donateh1"></br></h3>-->
             
 
@@ -210,7 +208,7 @@ main {
 
 
                <main>
-                <h3></br>Présentation video</h3>
+                <h3>Présentation video</h3>
                  <p> Une courte vidéo sur le processus de fabrication des profilés en aluminium.</p>
                 <video src="vid/Altest2.mp4" poster="vid\placeholder2.png" controls></video>
               </br>   </br>   
@@ -218,7 +216,7 @@ main {
                 <video src="vid/Altest1.mp4" poster="vid\placeholder1.png" controls></video>
               
               </main>
-
+             
               <h3 style="margin-top: 20px;text-align: center;">Galérie sur l'usine</h3>
 
               <div class="galplant"></div>
@@ -226,13 +224,14 @@ main {
 
               <div class="fr-devis"></div>
 
-              <div style="margin: 0 auto 0 auto; text-align: center;">
-                
-                <img class="cover" src="images/qu.jpg" style="border-radius:1px; margin-right:15px; margin:20px 0 20px 0; border: 1px solid #333;" alt><div style:"clear:both;"></div>
+           
+              <div style="margin: 0 auto 50 auto; text-align: center;">    <img class="scover" src="images/qu.jpg" style="border-radius:1px; margin:20px 0 20px 0; border: 1px solid #333;" alt><div style:"clear:both;"></div>
                 
 
-                <img class="cover" src="images/profils.jpg" style="border-radius:1px; margin:5px 0 15px 0; border: 1px solid #333;" alt><div style="clear:both;"></div>
-                </div>
+              <img class="scover" width="386" height="217" src="images/profils.jpg" style="border-radius:1px; margin:5px 0 15px 0; border: 1px solid #333;" alt><div style="clear:both;"></div></div>
+
+              
+
 
 
 
@@ -322,12 +321,9 @@ main {
 
 
             <div class="mbr-table-cell col-md-4" style="vertical-align: top;">
-              <div style="margin: 0 auto 50 auto; text-align: center;">
-                
-                <img class="cover" src="images/1614441841.png" style="border-radius:1px; margin-right:15px; margin:50px 0 20px 0; border: 1px solid #333;" alt><div style:"clear:both;"></div>
-                
-                </div>
-             
+              
+
+                         
               <div class="fr-contact-sub"></div>
              
               
